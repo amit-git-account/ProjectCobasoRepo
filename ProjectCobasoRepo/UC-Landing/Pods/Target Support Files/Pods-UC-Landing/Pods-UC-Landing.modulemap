@@ -1,0 +1,6 @@
+framework module Pods_UC_Landing {
+  umbrella header "Pods-UC-Landing-umbrella.h"
+
+  export *
+  module * { export * }
+}

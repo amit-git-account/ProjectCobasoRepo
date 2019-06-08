@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Home-->
         <scene sceneID="vtj-gH-S90">
             <objects>
-                <tableViewController id="8De-ge-L3Y" sceneMemberID="viewController">
+                <tableViewController id="8De-ge-L3Y" customClass="UseCaseSelectionTableTableViewController" customModule="UC_Landing" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="w7q-wh-q1o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,25 +22,25 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTD-DM-z4m">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="14"/>
-                                    <state key="normal" title="Queue"/>
-                                    <connections>
-                                        <segue destination="BYZ-38-t0r" kind="show" id="C6t-Zr-BAu"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhA-eP-C74">
-                                    <rect key="frame" x="0.0" y="14" width="375" height="30"/>
-                                    <state key="normal" title="Menu"/>
-                                    <connections>
-                                        <segue destination="m9F-Ef-Q7x" kind="show" id="frL-Kh-Knr"/>
-                                    </connections>
-                                </button>
-                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" translatesAutoresizingMaskIntoConstraints="NO" id="Nzq-Bs-pX2">
-                                    <rect key="frame" x="0.0" y="44" width="375" height="0.0"/>
+                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="3" rowHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="Nzq-Bs-pX2">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nzq-Bs-pX2" id="Nwl-c9-V79">
-                                        <rect key="frame" x="0.0" y="-0.49999988079071045" width="375" height="0.49999988079071045"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2019-06-04 at 7.24.57 PM" translatesAutoresizingMaskIntoConstraints="NO" id="dgS-4e-2Q5">
+                                                <rect key="frame" x="8" y="3" width="107" height="41"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTD-DM-z4m">
+                                                <rect key="frame" x="296" y="3" width="71" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Queue"/>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="show" id="C6t-Zr-BAu"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                     </tableViewCellContentView>
                                 </tableViewCell>
                             </subviews>
@@ -50,11 +50,23 @@
                             <outlet property="delegate" destination="8De-ge-L3Y" id="4YQ-Bb-aa2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="dsq-bQ-IKc"/>
+                    <navigationItem key="navigationItem" title="Home" id="dsq-bQ-IKc"/>
+                    <connections>
+                        <outlet property="tableInstance" destination="w7q-wh-q1o" id="gVt-n4-2ei"/>
+                        <outlet property="tableView" destination="w7q-wh-q1o" id="ZHw-Gk-dgh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HRd-jv-Rr7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hhA-eP-C74">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Menu"/>
+                    <connections>
+                        <segue destination="m9F-Ef-Q7x" kind="show" id="frL-Kh-Knr"/>
+                    </connections>
+                </button>
             </objects>
-            <point key="canvasLocation" x="-1254" y="69"/>
+            <point key="canvasLocation" x="-1255.2" y="68.815592203898049"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="33Y-HC-ws5">
@@ -182,6 +194,9 @@
             <point key="canvasLocation" x="-431" y="394"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Screen Shot 2019-06-04 at 7.24.57 PM" width="2866" height="1696"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="C6t-Zr-BAu"/>
     </inferredMetricsTieBreakers>
